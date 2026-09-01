@@ -2,54 +2,56 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex flex-1 w-full h-full bg-white dark:bg-black sm:items-start">
-      <div className="relative w-1/3 h-lvh flex">
-        <Image
-          className="absolute w-full h-lvh object-cover z-1 opacity-50"
-          src="/contoour.png"
-          alt="prsv logo"
-          width={800}
-          height={800}
-          priority
-        />
-        <a
-          className="w-full h-lvh text-3xl font-semibold flex items-center justify-center leading-10 text-black dark:text-zinc-50 hover:bg-black/[.01] dark:hover:bg-[#a5a5a54d] z-20"
-          href="/about"
-        >
-          other page
-        </a>
-      </div>
-      <div className="relative w-1/3 h-lvh flex">
-        <Image
-          className="absolute w-full h-lvh object-cover z-1 opacity-50"
-          src="/contoour2.png"
-          alt="prsv logo"
-          width={800}
-          height={800}
-          priority
-        />
-        <a
-          className="w-full h-lvh text-3xl font-semibold flex items-center justify-center leading-10 text-black dark:text-zinc-50 hover:bg-black/[.01] dark:hover:bg-[#a5a5a544] z-20"
-          href="/about"
-        >
-          other page
-        </a>
-      </div>
-      <div className="relative w-1/3 h-lvh flex">
-        <Image
-          className="absolute w-full h-lvh object-cover z-1 opacity-50"
-          src="/contoour.png"
-          alt="prsv logo"
-          width={800}
-          height={800}
-          priority
-        />
-        <a
-          className="w-full h-lvh text-3xl font-semibold flex items-center justify-center leading-10 text-black dark:text-zinc-50 hover:bg-black/[.01] dark:hover:bg-[#a5a5a544] z-20"
-          href="/about"
-        >
-          other page
-        </a>
+    <main className="p-3.5 w-full portrait:max-w-[100vh]  min-h-lvh flex flex-1 items-center justify-center bg-linear-to-b from-white to-zinc-200 gap-0.5 overflow-x-hidden">
+      <div className="relative mt-[10vh] w-full h-[80vh] portrait:h-fit flex portrait:flex-col items-center justify-center gap-4.5 overflow-x-hidden">
+        <div className="relative w-1/4 portrait:w-[80%] aspect-[2/3] max-h-full flex rounded-xl shadow-(--drop) border-2 border-zinc-900 hover:-translate-[4px] hover:shadow-(--drop-h) transition duration-150 ease-in-out overflow-hidden">
+          <Image
+            className="absolute w-full h-full object-cover z-1"
+            src="/contoour.png"
+            alt="prsv logo"
+            width={800}
+            height={800}
+            priority
+          />
+          <a
+            className="w-full h-full text-3xl font-semibold flex items-center justify-center leading-10 text-[#222222] hover:bg-black/[.01] hover:bg-[#9b7b7b4d] z-20"
+            href="/about"
+          >
+            About
+          </a>
+        </div>
+        <div className="relative w-1/4 portrait:w-[80%] aspect-[2/3] max-h-full flex rounded-xl shadow-(--drop) border-2 border-zinc-900  hover:-translate-[4px] hover:shadow-(--drop-h) transition duration-150 ease-in-out overflow-hidden">
+          <Image
+            className="absolute w-full h-full object-cover z-1"
+            src="/contoour2.png"
+            alt="prsv logo"
+            width={800}
+            height={800}
+            priority
+          />
+          <a
+            className="w-full h-full text-3xl font-semibold flex items-center justify-center leading-10 text-[#222222] hover:bg-black/[.01] hover:bg-[#9b7b7b4d] z-20"
+            href="/projects"
+          >
+            Projects
+          </a>
+        </div>
+        <div className="relative w-1/4 portrait:w-[80%] aspect-[2/3] max-h-full flex rounded-xl shadow-(--drop) border-2 border-zinc-900  hover:-translate-[4px] hover:shadow-(--drop-h) transition duration-150 ease-in-out overflow-hidden">
+          <Image
+            className="absolute w-full h-full object-cover z-1"
+            src="/contoour.png"
+            alt="prsv logo"
+            width={800}
+            height={800}
+            priority
+          />
+          <a
+            className="w-full h-full text-3xl font-semibold flex items-center justify-center leading-10 text-[#222222] hover:bg-black/[.01] hover:bg-[#9b7b7b4d] z-20"
+            href="/division"
+          >
+            division
+          </a>
+        </div>
       </div>
     </main>
   );
