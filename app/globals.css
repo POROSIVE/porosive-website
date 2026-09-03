@@ -4,7 +4,7 @@
   --background: #ffffff;
   --foreground: #171717;
   --drop: 4px 4px 0 var(--color-zinc-900);
-  --drop-h: 8px 8px 0 var(--color-zinc-900);
+  --drop-h: 10px 10px 0 var(--color-zinc-900);
 }
 
 @theme inline {

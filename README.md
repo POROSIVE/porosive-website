@@ -9,7 +9,6 @@ checkout [references.md](references.md) to see development references
 cloning:
 ```bash
 git clone https://github.com/POROSIVE/porosive-website.git
-cd app/
 ```
 - go to app directory:
 ```bash
