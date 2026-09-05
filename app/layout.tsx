@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/nav";
-import Footer from "@/components/footer";
+import Shell from "@/components/shell";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,21 +13,28 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "POROSIVE",
-  description: "Website implemented using NextJS",
-};
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export const metadata: Metadata = {
+  title: { 
+    default: "POROSIVE", 
+    template: "%s | POROSIVE", 
+    }, 
+    description: "A Software Studio", 
+  };
+
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <Header />
-        {children}
-        <Footer />
+        <Shell>{children}</Shell>
       </body>
     </html>
   );

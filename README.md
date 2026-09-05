@@ -5,7 +5,7 @@ checkout [references.md](references.md) to see development references
 
 
 ## Running Locally
-- download the source as [zip]() or via
+- download the source as [zip](https://github.com/POROSIVE/porosive-website/archive/refs/heads/master.zip) or via
 cloning:
 ```bash
 git clone https://github.com/POROSIVE/porosive-website.git

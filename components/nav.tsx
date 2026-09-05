@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from 'next/link'
 
 export default function Header() {
   return (
@@ -54,7 +55,7 @@ export default function Header() {
             </nav>
             <a
             className="px-5 h-12 flex items-center justify-center text-black border-transparent border-solid rounded-xl hover:bg-blue-50"
-            href="#"
+            href="/login"
             >
             Sign in
             </a>
