@@ -32,10 +32,10 @@ export default function SignUpForm() {
       setMessage(error.message);
     } else {
       setMessage('Check your email to confirm your account.');
-      const timer = setTimeout(() => {
-        router.push("/login")
-      }, 1000)
-      clearTimeout(timer)
+      // const timer = setTimeout(() => {
+      // }, 1000)
+      router.push("/login")
+      // clearTimeout(timer)
       router.refresh();
     }
 
