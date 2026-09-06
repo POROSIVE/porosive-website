@@ -1,17 +1,6 @@
-"use client"
 import Image from "next/image";
-import { useState, useEffect } from "react"
-import { createClient } from '@/utils/lib/supabase/client'
-import { User } from '@supabase/supabase-js'
 
-export default function Header() {
-  const [user, setUser] = useState<User | null>(null);
-  useEffect(() => {
-      const supabase = createClient()
-      supabase.auth.getUser().then(({data}) => {
-        setUser(data.user)
-      })
-  }, [])
+export default function PortalHeader() {
   return (
     <header className="fixed w-full flex backdrop-filter-[blur(20)] bg-[#ffffffce] z-50">
         <div className="mx-auto px-5 w-[75%] portrait:max-w-[100vh] flex items-center justify-between gap-1 z-52">
@@ -63,23 +52,6 @@ export default function Header() {
                 Developers
                 </a>
             </nav>
-            {user ? (
-            <>
-            <a
-            className="px-5 h-12 flex items-center justify-center text-black border-transparent border-solid rounded-xl hover:bg-blue-50"
-            href="/dashboard"
-            >
-            Dashboard
-            </a>
-            </>
-            ) : (
-            <a
-            className="px-5 h-12 flex items-center justify-center text-black border-transparent border-solid rounded-xl hover:bg-blue-50"
-            href="/login"
-            >
-            Sign in
-            </a>
-            )}
         </div>
     </header>
   );
