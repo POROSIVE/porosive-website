@@ -1,6 +1,11 @@
 import { createClient } from '@/utils/lib/supabase/server'
 import { redirect } from 'next/navigation'
-import DashboardPage from './dashboard'
+import DashboardUI from './dashboard'
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Dashboard",
+  description: "",
+};
 
 export default async function Dashboard() {
   const supabase = await createClient()
@@ -19,11 +24,20 @@ export default async function Dashboard() {
       .select('id, stat_name, stat_value')
       .eq('user_id', user.id),
   ])
-
+  const now = new Date()
+  const date = now.toLocaleDateString('en-GB')
+  let localtime = now.toLocaleTimeString('en-GB', {
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false,
+  })
+  const time = localtime.toUpperCase()
   return (
-    <DashboardPage
+    <DashboardUI
       user={user}
       profile={profileRes.data ?? null}
+      dates={date ?? null}
+      times={time ?? null}
       stats={statsRes.data ?? []}
     />
   )

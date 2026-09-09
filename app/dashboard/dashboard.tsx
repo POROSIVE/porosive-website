@@ -13,17 +13,10 @@ type DashboardProps = {
      user: User
      profile: Profile | null
      stats: Stat[] 
+     dates: string | null
+     times: string | null
     }
-const now = new Date()
-
-const cdate = now.toLocaleDateString('en-GB')
-let time = now.toLocaleTimeString('en-GB', {
-  hour: '2-digit',
-  minute: '2-digit',
-  hour12: true,
-})
-const times = time.toUpperCase()
-export default function DashboardPage({ user, profile, stats }: DashboardProps) {
+export default function DashboardUI({ user, profile, stats, dates, times }: DashboardProps) {
   return (
     <main className="p-3.5 w-full portrait:max-w-[100vh] min-h-lvh flex flex-col items-center bg-linear-to-b from-white to-zinc-100 gap-0.5 overflow-x-hidden">
         <div className="mt-25 px-4 py-12 w-[75%] portrait:max-w-[100vh] flex flex-col overflow-hidden bg-zinc-200 border border-solid border-zinc-600 rounded-lg">
@@ -31,7 +24,7 @@ export default function DashboardPage({ user, profile, stats }: DashboardProps) 
                 Hi, <span className='text-4xl font-semibold leading-15 tracking-tight text-black'>{profile?.username ?? user.email}</span>
             </h2>
             <p className="text-xl font-semibold text-zinc-600">
-                Today is {cdate} at {times}
+                Today is {dates} at {times}
             </p>
         </div>
         <div className="mt-4 w-[75%] portrait:max-w-[100vh] flex items-center justify-between gap-2">
