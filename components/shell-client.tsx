@@ -5,7 +5,7 @@ import PortalHeader from "@/components/portalnav";
 import Footer from "@/components/footer";
 
 const pageToHide = ["/login", "/signup"];
-const loggedPage = ["/dashboard", "/dashboard/profile_settings"];
+const loggedPage = ["/dashboard", "/settings"];
 
 export default function ShellClient({
   children,

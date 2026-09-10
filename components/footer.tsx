@@ -1,14 +1,18 @@
 import Image from "next/image";
+import { useSettings } from "@/components/settings_provider";
+
 
 export default function Footer() {
+  const { settings } = useSettings();
+  const theme = settings.appearance.theme;
   return (
-    <footer className="relative border-t bg-background">
+    <footer className="relative bg-(--background)">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-[1.5fr_2fr]">
           <div className="max-w-md">
             <Image
-              className="h-[60] aspect-square object-contain"
-              src="/prsvlogolightcut.png"
+              className="h-[60] aspect-square object-contain dark:invert"
+              src="/prsvlogocut.png"
               alt="prsv logo"
               width={120}
               height={60}
@@ -131,32 +135,32 @@ export default function Footer() {
           </div>
         </div>
         <div className="my-12 h-px bg-border" />
-          <div className="flex flex-col gap-4 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-            <p>
-              © {new Date().getFullYear()} POROSIVE. All rights reserved.
-            </p>
-            <div className="flex gap-6">
-              <a
-                href="/privacy"
-                className="transition hover:text-foreground"
-              >
-                Privacy
-              </a>
-              <a
-                href="/terms"
-                className="transition hover:text-foreground"
-              >
-                Terms
-              </a>
-              <a
-                href="/cookies"
-                className="transition hover:text-foreground"
-              >
-                Cookies
-              </a>
-            </div>
+        <div className="flex flex-col gap-4 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            © {new Date().getFullYear()} POROSIVE. All rights reserved.
+          </p>
+          <div className="flex gap-6">
+            <a
+              href="/privacy"
+              className="transition hover:text-foreground"
+            >
+              Privacy
+            </a>
+            <a
+              href="/terms"
+              className="transition hover:text-foreground"
+            >
+              Terms
+            </a>
+            <a
+              href="/cookies"
+              className="transition hover:text-foreground"
+            >
+              Cookies
+            </a>
           </div>
         </div>
+      </div>
     </footer>
   );
 }

@@ -18,52 +18,52 @@ type DashboardProps = {
     }
 export default function DashboardUI({ user, profile, stats, dates, times }: DashboardProps) {
   return (
-    <main className="p-3.5 w-full portrait:max-w-[100vh] min-h-lvh flex flex-col items-center bg-linear-to-b from-white to-zinc-100 gap-0.5 overflow-x-hidden">
-        <div className="mt-25 px-4 py-12 w-[75%] portrait:max-w-[100vh] flex flex-col overflow-hidden bg-zinc-200 border border-solid border-zinc-600 rounded-lg">
-            <h2 className="text-3xl font-semibold leading-15 tracking-tight text-black">
-                Hi, <span className='text-4xl font-semibold leading-15 tracking-tight text-black'>{profile?.username ?? user.email}</span>
+    <main className="p-3.5 w-full portrait:max-w-[100vh] min-h-lvh flex flex-col items-center gap-0.5 overflow-x-hidden">
+        <div className="mt-25 px-4 py-12 w-[75%] portrait:max-w-[100vh] flex flex-col overflow-hidden bg-(--subBG) border border-solid border-zinc-600 rounded-lg">
+            <h2 className="text-3xl font-semibold leading-15 tracking-tight text-(--foreground)">
+                Hi, <span className='text-4xl font-semibold leading-15 tracking-tight text-(--foreground)'>{profile?.username ?? user.email}</span>
             </h2>
-            <p className="text-xl font-semibold text-zinc-600">
+            <p className="text-xl font-semibold text-(--subFG)">
                 Today is {dates} at {times}
             </p>
         </div>
         <div className="mt-4 w-[75%] portrait:max-w-[100vh] flex items-center justify-between gap-2">
-          <div className="py-10 w-[25%] flex flex-col items-center justify-center gap-6 overflow-hidden bg-zinc-200 border border-solid border-zinc-600 rounded-lg hover:bg-zinc-100">
-            <h2 className="text-7xl font-semibold leading-15 tracking-tight text-black">
+          <div className="py-10 w-[25%] flex flex-col items-center justify-center gap-6 overflow-hidden bg-(--subBG) border border-solid border-zinc-600 rounded-lg hover:bg-zinc-100">
+            <h2 className="text-7xl font-semibold leading-15 tracking-tight text-(--foreground)">
                 2
             </h2>
             <p
-              className="px-8 w-fit h-12 text-xl font-bold text-[#777777]"
+              className="px-8 w-fit h-12 text-xl font-bold text-(--subFG)"
             >
               Commit commited
             </p>
           </div>
-          <div className="py-10 w-[25%] flex flex-col items-center justify-center gap-6 overflow-hidden bg-zinc-200 border border-solid border-zinc-600 rounded-lg hover:bg-zinc-100">
-            <h2 className="text-7xl font-semibold leading-15 tracking-tight text-black">
+          <div className="py-10 w-[25%] flex flex-col items-center justify-center gap-6 overflow-hidden bg-(--subBG) border border-solid border-zinc-600 rounded-lg hover:bg-zinc-100">
+            <h2 className="text-7xl font-semibold leading-15 tracking-tight text-(--foreground)">
               2
             </h2>
             <p
-              className="px-8 w-fit h-12 text-xl font-bold text-[#777777]"
+              className="px-8 w-fit h-12 text-xl font-bold text-(--subFG)"
             >
               New items
             </p>
           </div>
-          <div className="py-10 w-[25%] flex flex-col items-center justify-center gap-6 overflow-hidden bg-zinc-200 border border-solid border-zinc-600 rounded-lg hover:bg-zinc-100">
-            <h2 className="text-7xl font-semibold leading-15 tracking-tight text-black">
+          <div className="py-10 w-[25%] flex flex-col items-center justify-center gap-6 overflow-hidden bg-(--subBG) border border-solid border-zinc-600 rounded-lg hover:bg-zinc-100">
+            <h2 className="text-7xl font-semibold leading-15 tracking-tight text-(--foreground)">
               4
             </h2>
             <p
-              className="px-8 w-fit h-12 text-xl font-bold text-[#777777]"
+              className="px-8 w-fit h-12 text-xl font-bold text-(--subFG)"
             >
               Members joined
             </p>
           </div>
-          <div className="py-10 w-[25%] flex flex-col items-center justify-center gap-6 overflow-hidden bg-zinc-200 border border-solid border-zinc-600 rounded-lg hover:bg-zinc-100">
-            <h2 className="text-7xl font-semibold leading-15 tracking-tight text-black">
+          <div className="py-10 w-[25%] flex flex-col items-center justify-center gap-6 overflow-hidden bg-(--subBG) border border-solid border-zinc-600 rounded-lg hover:bg-zinc-100">
+            <h2 className="text-7xl font-semibold leading-15 tracking-tight text-(--foreground)">
               100%
             </h2>
             <p
-              className="px-8 w-fit h-12 text-xl font-bold text-[#777777]"
+              className="px-8 w-fit h-12 text-xl font-bold text-(--subFG)"
             >
               Streak rate
             </p>
@@ -74,12 +74,12 @@ export default function DashboardUI({ user, profile, stats, dates, times }: Dash
           stats.map((element) => (
           <div
            key={element.id} 
-           className="py-10 w-[25%]flex flex-col items-center justify-center gap-6 overflow-hidden bg-zinc-200 border border-solid border-zinc-600 rounded-lg">
-            <h2 className="px-8 w-fit h-12 text-xl font-bold text-[#777777]">
+           className="py-10 w-[25%]flex flex-col items-center justify-center gap-6 overflow-hidden bg-(--subBG) border border-solid border-zinc-600 rounded-lg">
+            <h2 className="px-8 w-fit h-12 text-xl font-bold text-(--subFG)">
                 {element.stat_name}
             </h2>
             <p
-              className="px-8 w-fit h-12 text-xl font-bold text-[#777777]"
+              className="px-8 w-fit h-12 text-xl font-bold text-(--subFG)"
             >
               {element.stat_value}
             </p>
