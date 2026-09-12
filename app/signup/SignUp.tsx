@@ -65,7 +65,7 @@ export default function SignUpForm() {
           </h1>
           <div className="w-full flex flex-col text-base font-medium">
             <label
-              className="py-2 w-full text-lg font-bold text-(--foreground))"
+              className="py-2 w-full text-lg font-bold text-(--foreground)"
             >
               Username
             </label>
