@@ -13,14 +13,16 @@ export async function GET(request: NextRequest) {
       process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!,
       {
         cookies: {
-          get(name) {
-            return request.cookies.get(name)?.value;
+          getAll() {
+            return request.cookies.getAll();
           },
-          set(name, value, options) {
-            response.cookies.set({ name, value, ...options });
-          },
-          remove(name, options) {
-            response.cookies.set({ name, value: '', ...options });
+          setAll(cookiesToSet) {
+            cookiesToSet.forEach(({ name, value, options }) =>
+              request.cookies.set(name, value)
+            );
+            cookiesToSet.forEach(({ name, value, options }) =>
+              response.cookies.set(name, value, options)
+            );
           },
         },
       }
