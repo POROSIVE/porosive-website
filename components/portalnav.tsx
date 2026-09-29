@@ -3,9 +3,10 @@ import Image from "next/image";
 import type { User } from "@supabase/supabase-js"
 import { useSettings } from "@/components/settings_provider";
 import { IconMask } from "@/components/IconMask";
+import Link from "next/link";
 
 type NavProps = {
-    user: User
+    user: User | null,
 }
 
 export default function PortalHeader({ user }: NavProps) {
@@ -50,7 +51,11 @@ export default function PortalHeader({ user }: NavProps) {
                         href="#"
                         className="px-4 py-2 block text-(--foreground) bg-(--subBG) hover:bg-(--background)"
                     >
-                        {user.email}
+                        {user ? (
+                            user.email
+                        ) : (
+                            <Link href="/login">Log in</Link>
+                        )}
                     </a>
                     <a
                         href="/settings"

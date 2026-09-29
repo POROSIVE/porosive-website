@@ -63,7 +63,8 @@ export function SettingsProvider({
     } = await supabase.auth.getUser();
 
     if (userError) {
-      console.error("Auth error:", userError);
+      // enable only for debug
+      // console.error("Auth error:", userError);
       setSettings(defaultSettings);
       setLoaded(true);
       return;
