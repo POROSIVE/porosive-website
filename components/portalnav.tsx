@@ -28,7 +28,7 @@ export default function PortalHeader({ user }: NavProps) {
                 className="mr-auto p-2 flex"
             >
                 <Image
-                    className={`${theme === "dark" ? "invert brightness-0" : ""}relative w-25 object-contain`}
+                    className={`${theme === "dark" ? "invert brightness-0" : ""} relative w-25 object-contain`}
                     src="/prsvlogocut.png"
                     alt="prsv logo"
                     width={120}
@@ -69,7 +69,7 @@ export default function PortalHeader({ user }: NavProps) {
                         className="relative w-fit flex"
                     >
                         <Image
-                            className={`${theme === "dark" ? "invert brightness-0" : ""}relative w-25 object-contain`}
+                            className={`${theme === "dark" ? "invert brightness-0" : ""} relative w-25 object-contain`}
                             src="/prsvlogocut.png"
                             alt="prsv logo"
                             width={200}
@@ -87,6 +87,12 @@ export default function PortalHeader({ user }: NavProps) {
                     </button>
                 </div>
                 <div className="px-5 py-2 w-full flex flex-col gap-0.5 border-b border-solid border-zinc-400">
+                    <a
+                        href="/dashboard"
+                        className="px-1.5 py-1 w-full block text-(--foreground) hover:bg-(--subBG) rounded-md"
+                    >
+                        Dashboard
+                    </a>
                     <a
                         href="#"
                         className="px-1.5 py-1 w-full block text-(--foreground) hover:bg-(--subBG) rounded-md"

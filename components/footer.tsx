@@ -11,11 +11,11 @@ export default function Footer() {
         <div className="grid gap-12 lg:grid-cols-[1.5fr_2fr]">
           <div className="max-w-md">
             <Image
-              className="h-[60] aspect-square object-contain dark:invert"
+              className={`${theme === "dark" ? "invert brightness-0" : ""} w-30 object-contain`}
               src="/prsvlogocut.png"
               alt="prsv logo"
-              width={120}
-              height={60}
+              width={200}
+              height={100}
               priority
             />
             <p className="text-sm leading-6 text-muted-foreground">
@@ -29,7 +29,7 @@ export default function Footer() {
               <ul className="mt-4 space-y-3">
                 <li>
                   <a
-                    href="#"
+                    href="https://github.com/Qwidio/CrossGate-Community-Collection"
                     className="text-sm text-muted-foreground transition hover:text-foreground"
                   >
                     CGCC
@@ -37,10 +37,10 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="https://github.com/POROSIVE/Nameless-Assembly"
                     className="text-sm text-muted-foreground transition hover:text-foreground"
                   >
-                    N.I.E
+                    Nameless Assembly
                   </a>
                 </li>
               </ul>
@@ -50,7 +50,7 @@ export default function Footer() {
               <ul className="mt-4 space-y-3">
                 <li>
                   <a
-                    href="#"
+                    href="/about"
                     className="text-sm text-muted-foreground transition hover:text-foreground"
                   >
                     About
