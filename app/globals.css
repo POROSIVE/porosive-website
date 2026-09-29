@@ -5,12 +5,13 @@
   --foreground: #171717;
   --subBG: var(--color-zinc-200);
   --subFG: var(--color-zinc-700);
-  --FG3: var(--color-zinc-600);
+  --FG3: var(--color-zinc-500);
   --nav: #f1f1f1ce;
   --surface: #27272a;
   --borders: #52525b;
   --muted: #a1a1aa;
   --accent: #60a5fa;
+  --shad: 0 2px 15px var(--color-zinc-900);
   --drop: 4px 4px 0 var(--color-zinc-900);
   --drop-h: 10px 10px 0 var(--color-zinc-900);
 }
@@ -20,16 +21,28 @@
     --background: #18181b;
     --foreground: #f4f4f5;
     --subBG: var(--color-zinc-800);
-    --subFG: var(--color-zinc-200);
-    --FG3: var(--color-zinc-300);
-    --nav: #1b1b1bce;
+    --subFG: var(--color-zinc-300);
+    --FG3: var(--color-zinc-400);
+    --nav: #1b1b1bab;
     --surface: #27272a;
-    --borders: #52525b;
+    --borders: #7b7b7e;
     --muted: #a1a1aa;
     --accent: #60a5fa;
+    --shad: 0 2px 15px var(--color-zinc-100);
     --drop: 4px 4px 0 var(--color-zinc-100);
     --drop-h: 10px 10px 0 var(--color-zinc-100);
   }
+}
+
+html {
+  font-family: system-ui,
+    Segoe UI,
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif,
+    Apple Color Emoji,
+    Segoe UI Emoji;
 }
 
 html,
@@ -69,4 +82,17 @@ body {
 
 .sidenav.hidden {
   display: none;
+}
+
+
+.hoverable::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+.hoverable:hover::after {
+  opacity: 0.2;
 }
