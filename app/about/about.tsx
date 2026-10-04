@@ -1,6 +1,7 @@
 "use client"
 import Image from "next/image";
 import Fades from "@/components/FadeIn";
+import Link from "next/link";
 
 
 export default function AboutPage() {
@@ -20,11 +21,11 @@ export default function AboutPage() {
           </p>
           </Fades>
           <Fades delay={200}>
-          <a
+          <Link
             className="relative px-8 w-fit h-12 flex items-center justify-center text-(--FG3) bg-(--background) border border-solid rounded-full transition-colors hover:text-(--foreground) overflow-hidden hoverable"
             href="/">
             home
-          </a>
+          </Link>
           </Fades>
         </div>
         <Fades delay={300} className="max-w-[50%] w-[300] h-[300] aspect-square flex overflow-hidden">

@@ -4,6 +4,7 @@ import { createClient } from "@/utils/lib/supabase/client"
 import { useRouter } from "next/navigation"
 import { useSettings } from "@/components/settings_provider";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function SignUpForm() {
   const { settings } = useSettings();
@@ -45,7 +46,7 @@ export default function SignUpForm() {
   return (
     <main className="pt-10vh px-3.5 w-full portrait:max-w-[100vh] min-h-lvh flex items-center justify-center gap-0.5 overflow-x-hidden">
       <div className="mx-auto pt-[4vh] px-4 w-full max-w-[30%] portrait:max-w-[100vh] h-lvh portrait:h-fit flex flex-col items-center justify-between gap-6">
-        <a
+        <Link
           href="/"
           className="mr-auto h-[10vh] max-w-20vw aspect-square flex"
         >
@@ -57,7 +58,7 @@ export default function SignUpForm() {
             height={500}
             priority
           />
-        </a>
+        </Link>
         <form onSubmit={handleSubmit}
          className="my-auto w-full flex flex-col gap-3 text-base font-medium">
           <h1 className="w-full text-4xl font-semibold tracking-tight text-(--foreground)">

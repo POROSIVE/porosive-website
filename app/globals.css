@@ -6,7 +6,7 @@
   --subBG: var(--color-zinc-200);
   --subFG: var(--color-zinc-700);
   --FG3: var(--color-zinc-500);
-  --nav: #f1f1f1ce;
+  --nav: #fdfdfdce;
   --surface: #27272a;
   --borders: #52525b;
   --muted: #a1a1aa;
@@ -31,6 +31,41 @@
     --shad: 0 2px 15px var(--color-zinc-100);
     --drop: 4px 4px 0 var(--color-zinc-100);
     --drop-h: 10px 10px 0 var(--color-zinc-100);
+    .gridded-pattern {
+      background-image: url("data:image/svg+xml,%3Csvg width='128' height='128' viewBox='0 0 128 128' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24 16V32M16 24H32' stroke='%23f4f4f5' stroke-width='1'/%3E%3C/svg%3E");
+    }
+  }
+}
+
+@keyframes scrolls-bp-rtl {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -128px 0;
+  }
+}
+@keyframes scrolls-rtl-full {
+  from {
+    translate: 0 0;
+  }
+  to {
+    translate: -100vw 0;
+  }
+}
+
+@layer utilities {
+  .gridded-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='128' height='128' viewBox='0 0 128 128' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24 16V32M16 24H32' stroke='%23000d18' stroke-width='1'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+    fill: var(--foreground);
+    animation: scrolls-bp-rtl 5s linear infinite;
+  }
+  .scroll-rtl{
+    background-image: url("../public/contoour6.png");
+    background-size: 100vw 100vh;
+    background-repeat: repeat;
+    animation: scrolls-rtl-full 120s linear infinite;
   }
 }
 
@@ -65,6 +100,12 @@ body {
   animation-iteration-count: 1 !important;
   scroll-behavior: auto !important;
   transition-duration: 0.01ms !important;
+  .gridded-pattern {
+    animation: none;
+  }
+  .scroll-rtl-full{
+    animation: none;
+  }
 }
 
 [data-high-contrast="true"] {

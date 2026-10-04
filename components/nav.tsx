@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { User } from '@supabase/supabase-js'
 import { useSettings } from "@/components/settings_provider";
+import Link from "next/link";
 
 export default function Header({ user }: { user: User | null }) {
   const { settings } = useSettings();
@@ -9,7 +10,7 @@ export default function Header({ user }: { user: User | null }) {
   return (
     <header className="fixed w-full flex backdrop-filter-[blur(20)] bg-(--nav) z-50">
         <div className="mx-auto px-5 w-[75%] portrait:max-w-[100vh] flex items-center justify-between gap-1 z-52">
-            <a
+            <Link
                 href="/"
                 className="w-25"
             >
@@ -21,7 +22,7 @@ export default function Header({ user }: { user: User | null }) {
                     height={60}
                     priority
                 />
-            </a>
+            </Link>
             <nav className="relative mx-auto h-full flex items-center justify-center">
                 <div className="group relative py-5">
                     <button className="px-7 h-12 inline-block items-center justify-center text-(--foreground) border-solid rounded-xl hover:bg-(--subBG)">
@@ -49,35 +50,35 @@ export default function Header({ user }: { user: User | null }) {
                             <h2 className="py-2 block text-xl text-(--foreground) z-100">
                                 Forums <span className="text-(--FG3)">(soon)</span>
                             </h2>
-                            <a
+                            <Link
                                 href="#"
                                 className="py-2 block text-xs text-(--subFG) hover:text-(--foreground)"
                             >
                                 Announcement
-                            </a>
-                            <a
+                            </Link>
+                            <Link
                                 href="#"
                                 className="py-2 block text-xs text-(--subFG) hover:text-(--foreground)"
                             >
                                 Latest Updates
-                            </a>
+                            </Link>
                         </div>
                         <div className="relative px-12 flex flex-col">
                             <h2 className="py-2 block text-xl text-(--foreground) z-100">
                                 Why POROSIVE?
                             </h2>
-                            <a
+                            <Link
                                 href="/about"
                                 className="py-2 block text-xs text-(--subFG) hover:text-(--foreground)"
                             >
                                 About
-                            </a>
-                            <a
+                            </Link>
+                            <Link
                                 href="#"
                                 className="py-2 block text-xs text-(--subFG) hover:text-(--foreground)"
                             >
                                 Timeline
-                            </a>
+                            </Link>
                         </div>
                         <div className="relative px-12 flex flex-col">
                             <h2 className="py-2 block text-xl text-(--foreground) z-100">
@@ -99,9 +100,9 @@ export default function Header({ user }: { user: User | null }) {
                     </div>
                 </div>
                 <div className="group relative py-5">
-                    <a href="/projects" className="px-7 h-12 flex items-center justify-center text-(--foreground) border-solid rounded-xl hover:bg-(--subBG)">
+                    <Link href="/projects" className="px-7 h-12 flex items-center justify-center text-(--foreground) border-solid rounded-xl hover:bg-(--subBG)">
                         Projects
-                    </a>
+                    </Link>
                     <div className="fixed top-20 left-1/2 -translate-x-1/2 p-5 w-[70vw] hidden flex-row gap-2 rounded-md bg-(--background) shadow-(--shad) group-hover:flex z-54 overflow-hidden">
                         <div className="relative mr-auto my-auto py-2 w-[25vh] h-[25vh] rounded-md flex flex-col gap-2 overflow-hidden">
                             <h2 className="px-4 block text-2xl text-(--foreground) z-100">
@@ -239,20 +240,20 @@ export default function Header({ user }: { user: User | null }) {
             </nav>
             {user ? (
             <>
-            <a
+            <Link
             className="px-5 h-12 flex items-center justify-center text-(--foreground) border-solid rounded-xl hover:bg-(--subBG)"
             href="/dashboard"
             >
             Dashboard
-            </a>
+            </Link>
             </>
             ) : (
-            <a
+            <Link
             className="px-5 h-12 flex items-center justify-center text-(--foreground) border-solid rounded-xl hover:bg-(--subBG)"
             href="/login"
             >
             Sign in
-            </a>
+            </Link>
             )}
         </div>
     </header>

@@ -34,7 +34,7 @@ export default function Fades({children, delay = 0, className = ""}: FadeProps) 
     <div
       ref={elemRef}
       style={{ transitionDelay: `${delay}ms` }}
-      className={`transform transition-all duration-700 motion-reduce:transform-none motion-reduce:transition-none ${
+      className={`transform transition-all duration-200 motion-reduce:transform-none motion-reduce:transition-none ${
         isVisible
           ? "translate-y-0 opacity-100"
           : "translate-y-6 opacity-0"

@@ -24,8 +24,8 @@ export default function PortalHeader({ user }: NavProps) {
             >
             ☰
             </button>
-            <a
-                href="/"
+            <Link
+                href="/dashboard"
                 className="mr-auto p-2 flex"
             >
                 <Image
@@ -35,7 +35,7 @@ export default function PortalHeader({ user }: NavProps) {
                     width={120}
                     height={60}
                 />
-            </a>
+            </Link>
             <a href="/inbox" className="group relative py-3">
                 <IconMask src="/notifications-outline.svg" className="w-11 h-11 transition-colors fill-current stroke-current hover:shadow-xl" />
                 <div className="absolute right-1 hidden rounded-md border bg-(--subBG) shadow-lg group-hover:block overflow-hidden z-54">

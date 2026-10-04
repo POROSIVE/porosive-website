@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useSettings } from "@/components/settings_provider";
+import Link from "next/link";
 
 
 export default function Footer() {
@@ -49,28 +50,28 @@ export default function Footer() {
               <h3 className="text-sm font-semibold">Company</h3>
               <ul className="mt-4 space-y-3">
                 <li>
-                  <a
+                  <Link
                     href="/about"
                     className="text-sm text-muted-foreground transition hover:text-foreground"
                   >
                     About
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="#"
                     className="text-sm text-muted-foreground transition hover:text-foreground"
                   >
                     Careers
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="#"
                     className="text-sm text-muted-foreground transition hover:text-foreground"
                   >
                     Contact
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

@@ -3,7 +3,7 @@ import { redirect } from 'next/navigation'
 import CatalogUI from './catalog'
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Item catalog",
+  title: "Item Catalog",
   description: "",
 };
 
@@ -21,8 +21,9 @@ export default async function catalog() {
       .single(),
     supabase
       .from('game_items')
-      .select('id, item_name, item_desc, type, game_id, trade_allowed, icon')
-      .eq('is_available', true),
+      .select('id, item_name, item_desc, type, game_id, trade_allowed, icon, platform_game_id, metadata, enabled')
+      .eq("enabled", true)
+      .eq("is_available", true),
   ])
   const now = new Date()
   const date = now.toLocaleDateString('en-GB')
