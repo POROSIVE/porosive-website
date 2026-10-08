@@ -53,6 +53,14 @@
     translate: -100vw 0;
   }
 }
+@keyframes scrollouts {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-105vh);
+  }
+}
 
 @layer utilities {
   .gridded-pattern {
@@ -66,6 +74,9 @@
     background-size: 100vw 100vh;
     background-repeat: repeat;
     animation: scrolls-rtl-full 120s linear infinite;
+  }
+  .scrollout{
+    animation: scrollouts 1.2s ease-in-out 1s forwards;
   }
 }
 
